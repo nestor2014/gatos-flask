@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Gato Creado{% endblock %}
+{% block content %}
+    <h1>Gato Creado</h1>
+    <p>Nombre: {{ gato.nombre }}</p>
+    <p>Color: {{ gato.color }}</p>
+    <p>Velocidad: {{ gato.velocidad }} km/h</p>
+    <p>{{ gato.maullar() }}</p>
+    <a href="/">Volver</a>
+{% endblock %}

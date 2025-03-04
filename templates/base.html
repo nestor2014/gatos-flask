@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="{{ url_for('formulario_gato') }}">Mascotas</a></li>
+            <li><a href="{{ url_for('historias_clinicas') }}">Historias Clínicas</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="contenido">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

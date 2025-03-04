@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Gatos{% endblock %}
+{% block content %}
+    <h1>Crear un Gato</h1>
+    <form method="POST" action="/crear_gato">
+        <p>Nombre: <input type="text" name="nombre"></p>
+        <p>Color: <input type="text" name="color"></p>
+        <p>Velocidad (km/h): <input type="number" name="velocidad"></p>
+        <input type="submit" value="Crear Gato">
+    </form>
+
+    <h2>Gatos Guardados</h2>
+    <ul>
+        {% for gato in gatos %}
+            <li>
+                ID: {{ gato[0] }} - {{ gato[1] }} ({{ gato[2] }}, {{ gato[3] }} km/h)
+                <div class="botones">
+                    <form action="/actualizar_gato/{{ gato[0] }}" method="GET">
+                        <input type="submit" value="Actualizar">
+                    </form>
+                    <form action="/eliminar_gato/{{ gato[0] }}" method="GET">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
